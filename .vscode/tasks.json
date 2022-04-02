@@ -11,7 +11,7 @@
                 "/nologo",
                 "/Ox",
                 "/Fe:",
-                "${workspaceFolder}\\main.exe",
+                "${workspaceFolder}\\bin\\main.exe",
                 "main.cpp",
                 "/link",
                 "/LIBPATH:\"${workspaceFolder}/lib\"",

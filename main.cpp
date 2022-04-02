@@ -16,6 +16,8 @@ int main(int, char **)
 	Mat frame;
 	//--- INITIALIZE VIDEOCAPTURE
 	VideoCapture cap;
+	VideoCapture &capture = cap;
+
 	// open the default camera using default API
 	cap.open(0);
 	// OR advance usage: select any API backend
