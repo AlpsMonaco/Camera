@@ -50,14 +50,14 @@ int main(int, char **)
 		}
 		cv::resize(frame, newFrame, Size(), 0.4, 0.4, INTER_LINEAR);
 
-		// å¢åŠ æ¤’ç›å™ªå£°
+		// Ôö¼Ó½·ÑÎÔëÉù
 		Mat srcSaltPepper = addSaltNoise(src, 100);
-		// ä¸­å€¼æ»¤æ³¢
+		// ÖĞÖµÂË²¨
 		Mat dstMedian;
 		medianBlur(srcSaltPepper, dstMedian, 3);
 		Mat dstGaussian;
 		GaussianBlur(srcSaltPepper, dstGaussian, Size(3, 3), 3, 3);
-		// åŒè¾¹æ»¤æ³¢
+		// Ë«±ßÂË²¨
 		Mat dstBilateralFilter;
 		bilateralFilter(srcSaltPepper, dstBilateralFilter, 25, 25 * 2, 25 / 2);
 
@@ -84,14 +84,14 @@ Mat addSaltNoise(const Mat src, int n)
 	Mat dst = src.clone();
 	for (int k = 0; k < n; k++)
 	{
-		// éšæœºé€‰æ‹©è¡Œåˆ—
+		// Ëæ»úÑ¡ÔñĞĞÁĞ
 		int i = rand() % dst.rows;
 		int j = rand() % dst.cols;
 
 		if (dst.channels() == 1)
 		{
 			dst.at<uchar>(i, j) = 255;
-			// ç›å™ªå£°
+			// ÑÎÔëÉù
 		}
 		else
 		{
@@ -102,14 +102,14 @@ Mat addSaltNoise(const Mat src, int n)
 	}
 	for (int k = 0; k < n; k++)
 	{
-		//éšæœºå–å€¼è¡Œåˆ—
+		//Ëæ»úÈ¡ÖµĞĞÁĞ
 		int i = rand() % dst.rows;
 		int j = rand() % dst.cols;
-		//å›¾åƒé€šé“åˆ¤å®š
+		//Í¼ÏñÍ¨µÀÅĞ¶¨
 		if (dst.channels() == 1)
 		{
 			dst.at<uchar>(i, j) = 0;
-			// æ¤’å™ªå£°
+			// ½·ÔëÉù
 		}
 		else
 		{
