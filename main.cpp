@@ -51,7 +51,8 @@ int main(int, char **)
 		cv::resize(frame, newFrame, Size(), 0.4, 0.4, INTER_LINEAR);
 
 		// 增加椒盐噪声
-		Mat srcSaltPepper = addSaltNoise(src, 100);
+		// Mat srcSaltPepper = addSaltNoise(src, 100);
+		Mat &srcSaltPepper = src;
 		// 中值滤波
 		Mat dstMedian;
 		medianBlur(srcSaltPepper, dstMedian, 3);
