@@ -2,6 +2,10 @@
 	"files.associations": {
 		"xstring": "cpp",
 		"iostream": "cpp",
-		"set": "cpp"
+		"set": "cpp",
+		"deque": "cpp",
+		"forward_list": "cpp",
+		"list": "cpp",
+		"vector": "cpp"
 	}
 }
